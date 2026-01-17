@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sílaba B Completa - Casa Bilíngue Kids</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #f0f7ff; color: #333; scroll-behavior: smooth; }
+        .kids-font { font-family: 'Fredoka', sans-serif; }
+        .card-word { background: white; border-radius: 24px; border: 4px solid #e0e7ff; transition: all 0.3s ease; }
+        .card-word:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .syllable-btn { background: #f3f0ff; border: 2px solid #ddd6fe; color: #6d28d9; padding: 6px 12px; border-radius: 12px; font-weight: 700; font-size: 1.2rem; transition: all 0.2s; cursor: pointer; }
+        .syllable-btn:hover { background: #9b59b6; color: white; transform: scale(1.1); }
+        .btn-audio { background: #2ecc71; color: white; padding: 5px 12px; border-radius: 50px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 5px; cursor: pointer; border: none; }
+        .transcription { color: #e67e22; font-style: italic; font-size: 0.85rem; font-weight: 500; }
+        .nav-dot { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; font-weight: bold; text-decoration: none; transition: transform 0.2s; }
+        .nav-dot:hover { transform: scale(1.2); }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-6">
+            <h1 class="kids-font text-4xl text-purple-600">CASA BILÍNGUE KIDS</h1>
+            <p class="text-orange-500 font-semibold italic text-sm">O jeito mais natural de Criar um pequeno bilíngue</p>
+            <div class="inline-block bg-yellow-400 px-6 py-1 rounded-full mt-2 shadow-md">
+                <span class="kids-font text-lg text-white">Módulo Sílaba Bilíngue - Letra B</span>
+            </div>
+            <p class="text-gray-400 text-xs mt-1">Autor: Fábio de Almeida</p>
+        </header>
+
+        <!-- Menu de Navegação Rápida -->
+        <nav class="flex justify-center gap-3 mb-10 sticky top-4 z-50">
+            <a href="#sec-ba" class="nav-dot bg-red-400">BA</a>
+            <a href="#sec-be" class="nav-dot bg-blue-400">BE</a>
+            <a href="#sec-bi" class="nav-dot bg-green-400">BI</a>
+            <a href="#sec-bo" class="nav-dot bg-orange-400">BO</a>
+            <a href="#sec-bu" class="nav-dot bg-purple-400">BU</a>
+            <a href="#sec-bao" class="nav-dot bg-yellow-600">BÃO</a>
+        </nav>
+
+        <!-- SEÇÃO BA -->
+        <section id="sec-ba" class="mb-20">
+            <h2 class="kids-font text-3xl text-red-500 border-b-4 border-red-200 mb-8 pb-2">Lição 1: Família do BA</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="grid-ba"></div>
+        </section>
+
+        <!-- SEÇÃO BE -->
+        <section id="sec-be" class="mb-20">
+            <h2 class="kids-font text-3xl text-blue-500 border-b-4 border-blue-200 mb-8 pb-2">Lição 2: Família do BE</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="grid-be"></div>
+        </section>
+
+        <!-- SEÇÃO BI -->
+        <section id="sec-bi" class="mb-20">
+            <h2 class="kids-font text-3xl text-green-500 border-b-4 border-green-200 mb-8 pb-2">Lição 3: Família do BI</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="grid-bi"></div>
+        </section>
+
+        <!-- SEÇÃO BO -->
+        <section id="sec-bo" class="mb-20">
+            <h2 class="kids-font text-3xl text-orange-500 border-b-4 border-orange-200 mb-8 pb-2">Lição 4: Família do BO</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="grid-bo"></div>
+        </section>
+
+        <!-- SEÇÃO BU -->
+        <section id="sec-bu" class="mb-20">
+            <h2 class="kids-font text-3xl text-purple-500 border-b-4 border-purple-200 mb-8 pb-2">Lição 5: Família do BU</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="grid-bu"></div>
+        </section>
+
+        <!-- SEÇÃO BÃO -->
+        <section id="sec-bao" class="mb-20">
+            <h2 class="kids-font text-3xl text-yellow-700 border-b-4 border-yellow-200 mb-8 pb-2">Lição 6: O Som do BÃO</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="grid-bao"></div>
+        </section>
+    </div>
+
+    <script>
+        const data = {
+            ba: [
+                { pt: "BA-NA-NA", en: "Banana", tr: "(BÂ-NÉ-NÂ)", emoji: "🍌", s1: "I eat a yellow banana.", st1: "(/ai it ê ié-lou bâ-né-nâ/)", s2: "Monkeys love bananas.", st2: "(/mân-kis lâv bâ-né-nâs/)" },
+                { pt: "BA-LA", en: "Candy", tr: "(KÉN-DI)", emoji: "🍬", s1: "I like the blue candy.", st1: "(/ai láik dâ blu kén-di/)", s2: "Can I have some candy?", st2: "(/kén ai hév sâm kén-di/)" },
+                { pt: "BA-LÃO", en: "Balloon", tr: "(BÂ-LÚN)", emoji: "🎈", s1: "Look at the red balloon!", st1: "(/luk ét dâ réd bâ-lún/)", s2: "The balloon is in the sky.", st2: "(/dâ bâ-lún iz in dâ skái/)" },
+                { pt: "BA-LEI-A", en: "Whale", tr: "(UÊIL)", emoji: "🐋", s1: "The whale lives in the sea.", st1: "(/dâ uêil livs in dâ si/)", s2: "Whales are very big!", st2: "(/uêils ar vé-ri big/)" },
+                { pt: "BA-TA-TA", en: "Potato", tr: "(PÔ-TÊI-TOU)", emoji: "🥔", s1: "I like mashed potatoes.", st1: "(/ai láik mé-shd pô-têi-tous/)", s2: "The potato is hot.", st2: "(/dâ pô-têi-tou iz hót/)" },
+                { pt: "BA-R-CO", en: "Boat", tr: "(BÔUT)", emoji: "⛵", s1: "The boat is on the water.", st1: "(/dâ bôut iz on dâ uó-têr/)", s2: "Let's sail the boat.", st2: "(/léts sêil dâ bôut/)" },
+                { pt: "BA-CI-A", en: "Bowl", tr: "(BÔUL)", emoji: "🥣", s1: "Put the cereal in the bowl.", st1: "(/put dâ sí-ri-al in dâ bôul/)", s2: "The blue bowl is clean.", st2: "(/dâ blu bôul iz klin/)" },
+                { pt: "BA-NHEI-RA", en: "Bathtub", tr: "(BÉT-TÂB)", emoji: "🛁", s1: "Time for the bathtub!", st1: "(/táim fôr dâ bét-tÂb/)", s2: "Rubber duck in the bathtub.", st2: "(/râ-bêr dâk in dâ bét-tâb/)" },
+                { pt: "BA-TOM", en: "Lipstick", tr: "(LÍP-STIK)", emoji: "💄", s1: "Mom has red lipstick.", st1: "(/môm hés réd líp-stik/)", s2: "Don't touch the lipstick.", st2: "(/dount tâtch dâ líp-stik/)" },
+                { pt: "BA-Ú", en: "Chest", tr: "(TCHÉST)", emoji: "🏴‍☠️", s1: "Open the toy chest.", st1: "(/ôu-pên dâ tói tchést/)", s2: "A secret treasure chest.", st2: "(/ê sí-krit tré-jêr tchést/)" },
+                { pt: "BA-TA-TA FRI-TA", en: "Fries", tr: "(FRÁIZ)", emoji: "🍟", s1: "I love french fries.", st1: "(/ai lâv frêntch fráiz/)", s2: "Can we share the fries?", st2: "(/kén ui shé-r dâ fráiz/)" },
+                { pt: "BA-RRA-CA", en: "Tent", tr: "(TÉNT)", emoji: "⛺", s1: "We sleep in a tent.", st1: "(/ui slíp in ê tént/)", s2: "The tent is big.", st2: "(/dâ tént iz big/)" }
+            ],
+            be: [
+                { pt: "BE-BÊ", en: "Baby", tr: "(BÊI-BI)", emoji: "👶", s1: "The baby is crying.", st1: "(/dâ bêi-bi iz krái-in/)", s2: "I love my baby brother.", st2: "(/ai lâv mai bêi-bi brô-dêr/)" },
+                { pt: "BEI-JO", en: "Kiss", tr: "(KÍSS)", emoji: "💋", s1: "Give me a big kiss.", st1: "(/guiv mi ê big kíss/)", s2: "A goodnight kiss.", st2: "(/ê gud-náit kíss/)" },
+                { pt: "BER-ÇO", en: "Crib", tr: "(KRÍB)", emoji: "🛏️", s1: "The baby is in the crib.", st1: "(/dâ bêi-bi iz in dâ kríb/)", s2: "A small white crib.", st2: "(/ê smól uáit kríb/)" },
+                { pt: "BE-SOU-RO", en: "Beetle", tr: "(BÍ-TOL)", emoji: "🪲", s1: "The beetle is green.", st1: "(/dâ bí-tol iz grin/)", s2: "Look at that little beetle.", st2: "(/luk ét dét lí-tol bí-tol/)" },
+                { pt: "BE-RIN-JE-LA", en: "Eggplant", tr: "(ÉG-PLENT)", emoji: "🍆", s1: "I like eggplant pizza.", st1: "(/ai láik ég-plent pít-sa/)", s2: "The eggplant is purple.", st2: "(/dâ ég-plent iz pûr-pôl/)" },
+                { pt: "BE-ZER-RO", en: "Calf", tr: "(KÉF)", emoji: "🐮", s1: "The calf is with the cow.", st1: "(/dâ kéf iz uíd dâ káu/)", s2: "The baby cow is a calf.", st2: "(/dâ bêi-bi káu i-zê kéf/)" },
+                { pt: "BE-XI-GA", en: "Balloon", tr: "(BÂ-LÚN)", emoji: "🎈", s1: "The party has balloons.", st1: "(/dâ pár-ti hés bâ-lúns/)", s2: "Pop the yellow balloon!", st2: "(/póp dâ ié-lou bâ-lún/)" },
+                { pt: "BE-BI-DA", en: "Drink", tr: "(DRÍNK)", emoji: "🍹", s1: "Water is a good drink.", st1: "(/uó-têr i-zê gud drínk/)", s2: "May I have a drink?", st2: "(/mêi ai hév ê drínk/)" },
+                { pt: "BE-LIS-CÃO", en: "Pinch", tr: "(PÍNTCH)", emoji: "🤏", s1: "Don't pinch your sister!", st1: "(/dount píntch iór sís-têr/)", s2: "A small pinch on the arm.", st2: "(/ê smól píntch on dâ árm/)" },
+                { pt: "BEI-SE-BOL", en: "Baseball", tr: "(BÊIS-BÓL)", emoji: "⚾", s1: "Let's play baseball.", st1: "(/léts plêi bêis-ból/)", s2: "He has a baseball bat.", st2: "(/hi hés ê bêis-ból bét/)" },
+                { pt: "BE-LE-ZA", en: "Beauty", tr: "(BÍU-TI)", emoji: "👍", s1: "Beauty is everywhere.", st1: "(/bíu-ti i-zêv-ri-uér/)", s2: "The flower has beauty.", st2: "(/dâ fláu-êr hés bíu-ti/)" },
+                { pt: "BEN-GA-LA", en: "Cane", tr: "(KÊIN)", emoji: "🦯", s1: "Grandpa uses a cane.", st1: "(/grénd-pá iú-zê-zê kêin/)", s2: "A candy cane is sweet.", st2: "(/ê kén-di kêin iz suít/)" }
+            ],
+            bi: [
+                { pt: "BI-CI-CLE-TA", en: "Bicycle", tr: "(BÁI-SI-KOL)", emoji: "🚲", s1: "I ride my bicycle.", st1: "(/ai ráid mai bái-si-kol/)", s2: "A blue bicycle for me.", st2: "(/ê blu bái-si-kol fôr mi/)" },
+                { pt: "BI-CO", en: "Beak", tr: "(BÍK)", emoji: "🦜", s1: "The bird has a sharp beak.", st1: "(/dâ bûrd hés ê shár-p bík/)", s2: "A yellow bird beak.", st2: "(/ê ié-lou bûrd bík/)" },
+                { pt: "BI-GO-DE", en: "Mustache", tr: "(MÂS-TÉSH)", emoji: "🧔", s1: "Daddy has a mustache.", st1: "(/dé-di hés ê mâS-tésh/)", s2: "A funny fake mustache.", st2: "(/ê fâ-ni fêik mâs-tésh/)" },
+                { pt: "BI-FE", en: "Steak", tr: "(STÊIK)", emoji: "🥩", s1: "I eat steak for lunch.", st1: "(/ai it stêik fôr lântch/)", s2: "The steak is delicious.", st2: "(/dâ stêik iz di-lí-shâs/)" },
+                { pt: "BI-QUÍ-NI", en: "Bikini", tr: "(BI-KÍ-NI)", emoji: "👙", s1: "She wears a pink bikini.", st1: "(/shi uér-zê pínk bi-kí-ni/)", s2: "Ready for the pool.", st2: "(/ré-di fôr dâ pul/)" },
+                { pt: "BI-CHO", en: "Animal", tr: "(É-NI-MOL)", emoji: "🦁", s1: "What is your favorite animal?", st1: "(/uót iz iór fêi-vô-rit é-ni-mol/)", s2: "The lion is a big animal.", st2: "(/dâ lái-on i-zê big é-ni-mol/)" },
+                { pt: "BI-NÓ-CU-LO", en: "Binoculars", tr: "(BI-NÓ-KIU-LARS)", emoji: "🔭", s1: "Use the binoculars to see.", st1: "(/iuz dâ bi-nó-kiu-lars tu si/)", s2: "I can see the birds.", st2: "(/ai kén si dâ bûrds/)" },
+                { pt: "BIS-COI-TO", en: "Cookie", tr: "(KÚ-KI)", emoji: "🍪", s1: "I want a chocolate cookie.", st1: "(/ai uónt ê tchó-kô-lit kú-ki/)", s2: "Milk and cookies, please!", st2: "(/mílk énd kú-kis pliz/)" },
+                { pt: "BI-LHE-TE", en: "Ticket", tr: "(TÍ-KIT)", emoji: "🎫", s1: "Here is your movie ticket.", st1: "(/hír iz iór mú-vi tí-kit/)", s2: "Don't lose the ticket.", st2: "(/dount luz dâ tí-kit/)" },
+                { pt: "BIN-GO", en: "Bingo", tr: "(BÍN-GOU)", emoji: "🎱", s1: "Let's play a game of bingo.", st1: "(/léts plêi ê guêim ôv bín-gou/)", s2: "I shouted Bingo!", st2: "(/ai sháu-têd bín-gou/)" },
+                { pt: "BI-BLIO-TE-CA", en: "Library", tr: "(LÁI-BRÉ-RI)", emoji: "📚", s1: "We go to the library.", st1: "(/ui gou tu dâ lái-bré-ri/)", s2: "Many books in the library.", st2: "(/mé-ni buks in dâ lái-bré-ri/)" },
+                { pt: "BI-CHO-PRE-GUI-ÇA", en: "Sloth", tr: "(SLÓTH)", emoji: "🦥", s1: "The sloth is very slow.", st1: "(/dâ slóth iz vé-ri slóu/)", s2: "Look at the cute sloth.", st2: "(/luk ét dâ kiut slóth/)" }
+            ],
+            bo: [
+                { pt: "BO-LA", en: "Ball", tr: "(BÓL)", emoji: "⚽", s1: "Throw the ball to me.", st1: "(/trôu dâ ból tu mi/)", s2: "The ball is round.", st2: "(/dâ ból iz ráund/)" },
+                { pt: "BO-LO", en: "Cake", tr: "(KÊIK)", emoji: "🍰", s1: "Happy birthday cake!", st1: "(/hép-pi bûrd-dêi kêik/)", s2: "A piece of chocolate cake.", st2: "(/ê pís ôv tchó-kô-lit kêik/)" },
+                { pt: "BO-NE-CA", en: "Doll", tr: "(DÓL)", emoji: "👧", s1: "The doll has long hair.", st1: "(/dâ dól hés lóng hér/)", s2: "Play with your dolls.", st2: "(/plêi uíd iór dóls/)" },
+                { pt: "BO-CA", en: "Mouth", tr: "(MÁUTH)", emoji: "👄", s1: "Open your mouth.", st1: "(/ôu-pên iór máuth/)", s2: "Brush your teeth.", st2: "(/brâsh iór tith/)" },
+                { pt: "BOI", en: "Ox", tr: "(ÓKS)", emoji: "🐂", s1: "The ox is in the field.", st1: "(/dâ óks iz in dâ fild/)", s2: "A very strong ox.", st2: "(/ê vé-ri stróng óks/)" },
+                { pt: "BO-TA", en: "Boot", tr: "(BÚT)", emoji: "👢", s1: "Put on your boots.", st1: "(/put on iór búts/)", s2: "Rain boots are yellow.", st2: "(/rêin búts ar ié-lou/)" },
+                { pt: "BO-NÉ", en: "Cap", tr: "(KÉP)", emoji: "🧢", s1: "I wear a blue cap.", st1: "(/ai uêr ê blu kép/)", s2: "Turn your cap around.", st2: "(/tûrn iór kép ê-ráund/)" },
+                { pt: "BO-TÃO", en: "Button", tr: "(BÂ-TON)", emoji: "🔘", s1: "Push the red button.", st1: "(/púsh dâ réd bâ-ton/)", s2: "My shirt has buttons.", st2: "(/mai shûrt hés bâ-tons/)" },
+                { pt: "BO-R-BO-LE-TA", en: "Butterfly", tr: "(BÂ-TÊR-FLÁI)", emoji: "🦋", s1: "The butterfly is pretty.", st1: "(/dâ bâ-têr-flái iz prí-ti/)", s2: "See the butterfly fly.", st2: "(/si dâ bâ-têr-flái flái/)" },
+                { pt: "BO-DE", en: "Goat", tr: "(GÔUT)", emoji: "🐐", s1: "The goat eats grass.", st1: "(/dâ gôut its gréss/)", s2: "A little baby goat.", st2: "(/ê lí-tol bêi-bi gôut/)" },
+                { pt: "BOL-SO", en: "Pocket", tr: "(PÓ-KIT)", emoji: "👖", s1: "My hands are in my pockets.", st1: "(/mai hénds ar in mai pó-kits/)", s2: "A hole in the pocket.", st2: "(/ê hôul in dâ pó-kit/)" },
+                { pt: "BO-LA-CHA", en: "Cracker", tr: "(KRÉ-KÊR)", emoji: "🥠", s1: "I want a salty cracker.", st1: "(/ai uónt ê sól-ti kré-kêr/)", s2: "Cheese and crackers.", st2: "(/tchiz énd kré-kêrs/)" }
+            ],
+            bu: [
+                { pt: "BU-LE", en: "Teapot", tr: "(TÍ-PÓT)", emoji: "🫖", s1: "The teapot is hot.", st1: "(/dâ tí-pót iz hót/)", s2: "Pour the tea, please.", st2: "(/pôr dâ ti pliz/)" },
+                { pt: "BU-RA-CO", en: "Hole", tr: "(HÔUL)", emoji: "🕳️", s1: "A hole in the ground.", st1: "(/ê hôul in dâ gráund/)", s2: "Dig a big hole.", st2: "(/dig ê big hôul/)" },
+                { pt: "BU-ZI-NA", en: "Horn", tr: "(HÓRN)", emoji: "📣", s1: "Honk the car horn.", st1: "(/hônk dâ kár hórn/)", s2: "Beep beep goes the horn.", st2: "(/bip bip gôuz dâ hórn/)" },
+                { pt: "BU-CHA", en: "Sponge", tr: "(SPÂNDJ)", emoji: "🧽", s1: "Use the sponge to clean.", st1: "(/iuz dâ spândj tu klin/)", s2: "A soft yellow sponge.", st2: "(/ê sóft ié-lou spândj/)" },
+                { pt: "BU-RRO", en: "Donkey", tr: "(DÓN-KI)", emoji: "🫏", s1: "The donkey is friendly.", st1: "(/dâ dón-ki iz frénd-li/)", s2: "Hee-haw says the donkey.", st2: "(/hi-hó sêiz dâ dón-ki/)" },
+                { pt: "BU-QUÊ", en: "Bouquet", tr: "(BU-KÊI)", emoji: "💐", s1: "A bouquet of flowers.", st1: "(/ê bu-kêi ôv fláu-êrs/)", s2: "For my beautiful mom.", st2: "(/fôr mai biu-ti-ful môm/)" },
+                { pt: "BU-ME-RAN-GUE", en: "Boomerang", tr: "(BU-MÊ-RÉNG)", emoji: "🪃", s1: "Throw the boomerang.", st1: "(/trôu dâ bu-mê-réng/)", s2: "It comes back to you.", st2: "(/it kâms bék tu iu/)" },
+                { pt: "BÚ-FA-LO", en: "Buffalo", tr: "(BÂ-FÂ-LOU)", emoji: "🐃", s1: "The buffalo is strong.", st1: "(/dâ bâ-fâ-lou iz stróng/)", s2: "A big brown buffalo.", st2: "(/ê big bráun bâ-fâ-lou/)" },
+                { pt: "BUL-DO-GUE", en: "Bulldog", tr: "(BUL-DÓG)", emoji: "🐶", s1: "The bulldog is sleeping.", st1: "(/dâ bul-dóg iz slí-pin/)", s2: "A funny bulldog face.", st2: "(/ê fâ-ni bul-dóg fêis/)" },
+                { pt: "BÚ-SSO-LA", en: "Compass", tr: "(KÓM-PÂSS)", emoji: "🧭", s1: "Use the compass to find north.", st1: "(/iuz dâ kóm-pâss tu fáind nôrth/)", s2: "A shiny gold compass.", st2: "(/ê shái-ni gôuld kóm-pâss/)" },
+                { pt: "BUS-CA", en: "Search", tr: "(SÛRTCH)", emoji: "🔍", s1: "Search for the hidden key.", st1: "(/sûrtch fôr dâ hí-dên ki/)", s2: "I will search online.", st2: "(/ai uíl sûrtch on-láin/)" },
+                { pt: "BUM-BUM", en: "Bottom", tr: "(BÓ-TOM)", emoji: "🍑", s1: "Wash your bottom.", st1: "(/uósh iór bó-tom/)", s2: "Sit on your bottom.", st2: "(/sít on iór bó-tom/)" }
+            ],
+            bao: [
+                { pt: "SA-BÃO", en: "Soap", tr: "(SÔUP)", emoji: "🧼", s1: "Wash hands with soap.", st1: "(/uósh hénds uíd sôup/)", s2: "The soap has bubbles.", st2: "(/dâ sôup hés bâ-bôls/)" },
+                { pt: "LO-BÃO", en: "Big Wolf", tr: "(BÍG UÚLF)", emoji: "🐺", s1: "The big wolf is scary.", st1: "(/dâ big uúlf iz ské-ri/)", s2: "Hooooowl says the wolf.", st2: "(/hâu-ol sêiz dâ uúlf/)" },
+                { pt: "BO-BÃO", en: "Silly", tr: "(SÍ-LI)", emoji: "🤪", s1: "Don't be silly!", st1: "(/dount bi sí-li/)", s2: "You are a silly boy.", st2: "(/iu ar ê sí-li bói/)" },
+                { pt: "BA-BÃO", en: "Drooler", tr: "(DRU-LÊR)", emoji: "🤤", s1: "The baby is a drooler.", st1: "(/dâ bêi-bi i-zê dru-lêr/)", s2: "Wipe your chin.", st2: "(/uáip iór tchín/)" },
+                { pt: "GI-BÃO", en: "Jacket", tr: "(DJÉ-KIT)", emoji: "🧥", s1: "Wear your leather jacket.", st1: "(/uêr iór lé-dêr djé-kit/)", s2: "The jacket is warm.", st2: "(/dâ djé-kit iz uórm/)" }
+            ]
+        };
+
+        function renderBlocks() {
+            for (const section in data) {
+                const container = document.getElementById(`grid-${section}`);
+                data[section].forEach(item => {
+                    const syllables = item.pt.split("-");
+                    let sylButtons = syllables.map(s => `<button onclick="speakPT('${s}')" class="syllable-btn">${s}</button>`).join("");
+                    
+                    const card = `
+                        <div class="card-word p-4 flex flex-col items-center gap-4">
+                            <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center text-4xl shadow-inner">${item.emoji}</div>
+                            <div class="w-full text-center">
+                                <div class="flex gap-1 mb-3 justify-center flex-wrap">${sylButtons}</div>
+                                <div class="flex items-center gap-2 mb-3 justify-center">
+                                    <span class="text-xl font-bold text-blue-600 uppercase">${item.en}</span>
+                                    <span class="transcription">${item.tr}</span>
+                                    <button onclick="speakEN('${item.en}')" class="btn-audio">🔊</button>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded-xl border-l-4 border-blue-300 text-left space-y-2">
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <span class="text-xs font-medium">1. ${item.s1}</span>
+                                        <span class="transcription text-[10px]">${item.st1}</span>
+                                        <button onclick="speakEN('${item.s1}')" class="btn-audio text-[10px] py-0 px-2">🔊</button>
+                                    </div>
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <span class="text-xs font-medium">2. ${item.s2}</span>
+                                        <span class="transcription text-[10px]">${item.st2}</span>
+                                        <button onclick="speakEN('${item.s2}')" class="btn-audio text-[10px] py-0 px-2">🔊</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+                    container.innerHTML += card;
+                });
+            }
+        }
+
+        function speakPT(t) {
+            window.speechSynthesis.cancel();
+            const u = new SpeechSynthesisUtterance(t);
+            u.lang = 'pt-BR'; u.rate = 0.8; window.speechSynthesis.speak(u);
+        }
+
+        function speakEN(t) {
+            window.speechSynthesis.cancel();
+            const u = new SpeechSynthesisUtterance(t);
+            u.lang = 'en-US'; u.rate = 0.9;
+            const voices = window.speechSynthesis.getVoices();
+            const enVoice = voices.find(v => v.lang.startsWith('en-') && v.name.includes('Google'));
+            if (enVoice) u.voice = enVoice;
+            window.speechSynthesis.speak(u);
+        }
+
+        window.onload = renderBlocks;
+        window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+    </script>
+</body>
+</html>
