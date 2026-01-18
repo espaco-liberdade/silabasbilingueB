@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sílaba B Completa - Alfabetização Fonética</title>
+    <title>Sílaba B Completa - Casa Bilíngue Kids</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Poppins', sans-serif; background-color: #f0f7ff; color: #333; scroll-behavior: smooth; }
         .kids-font { font-family: 'Fredoka', sans-serif; }
-        .card-word { background: white; border-radius: 24px; border: 4px solid #e0e7ff; transition: all 0.3s ease; }
+        .card-word { background: white; border-radius: 24px; border: 4px solid #e0e7ff; transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column; }
         .card-word:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
         .syllable-btn { background: #f3f0ff; border: 2px solid #ddd6fe; color: #6d28d9; padding: 6px 12px; border-radius: 12px; font-weight: 700; font-size: 1.2rem; transition: all 0.2s; cursor: pointer; }
         .syllable-btn:hover { background: #9b59b6; color: white; transform: scale(1.1); }
@@ -36,7 +36,7 @@
 
         <!-- Menu de Navegação Rápida -->
         <div class="header-sticky">
-            <nav class="flex justify-center gap-3 py-4">
+            <nav class="flex justify-center gap-3 py-4 flex-wrap">
                 <a href="#sec-ba" class="nav-dot bg-red-400">BA</a>
                 <a href="#sec-be" class="nav-dot bg-blue-400">BE</a>
                 <a href="#sec-bi" class="nav-dot bg-green-400">BI</a>
@@ -49,7 +49,6 @@
 
         <!-- SEÇÕES -->
         <div id="content-area">
-            <!-- As grades serão preenchidas pelo JS -->
             <section id="sec-ba" class="mb-20">
                 <h2 class="kids-font text-3xl text-red-500 border-b-4 border-red-200 mb-8 pb-2">Lição 1: Família do BA</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="grid-ba"></div>
@@ -85,81 +84,81 @@
     <script>
         const data = {
             ba: [
-                { pt: "BA-NA-NA", en: "Banana", tr: "(BÂ-NÉ-NÂ)", emoji: "🍌", s1: "I eat a yellow banana.", t1: "Eu como uma banana amarela.", st1: "(/ai it ê ié-lou bâ-né-nâ/)", s2: "Monkeys love bananas.", t2: "Macacos amam bananas.", st2: "(/mân-kis lâv bâ-né-nâs/)" },
-                { pt: "BA-LA", en: "Candy", tr: "(KÉN-DI)", emoji: "🍬", s1: "I like the blue candy.", t1: "Eu gosto da bala azul.", st1: "(/ai láik dâ blu kén-di/)", s2: "Can I have some candy?", t2: "Pode me dar um pouco de bala?", st2: "(/kén ai hév sâm kén-di/)" },
-                { pt: "BA-LÃO", en: "Balloon", tr: "(BÂ-LÚN)", emoji: "🎈", s1: "Look at the red balloon!", t1: "Olhe para o balão vermelho!", st1: "(/luk ét dâ réd bâ-lún/)", s2: "The balloon is in the sky.", t2: "O balão está no céu.", st2: "(/dâ bâ-lún iz in dâ skái/)" },
-                { pt: "BA-LEI-A", en: "Whale", tr: "(UÊIL)", emoji: "🐋", s1: "The whale lives in the sea.", t1: "A baleia mora no mar.", st1: "(/dâ uêil livs in dâ si/)", s2: "Whales are very big!", t2: "As baleias são muito grandes!", st2: "(/uêils ar vé-ri big/)" },
-                { pt: "BA-TA-TA", en: "Potato", tr: "(PÔ-TÊI-TOU)", emoji: "🥔", s1: "I like mashed potatoes.", t1: "Eu gosto de purê de batata.", st1: "(/ai láik mé-shd pô-têi-tous/)", s2: "The potato is hot.", t2: "A batata está quente.", st2: "(/dâ pô-têi-tou iz hót/)" },
+                { pt: "BA-NA-NA", en: "Banana", tr: "(BÂ-NÉ-NÂ)", emoji: "🍌", s1: "I eat a yellow banana.", t1: "Eu como uma banana amarela.", st1: "(/ai it ê ié-lou bâ-né-nâ/)", s2: "Monkeys love bananas.", t2: "Os macacos adoram bananas.", st2: "(/mân-kis lâv bâ-né-nâs/)" },
+                { pt: "BA-LA", en: "Candy", tr: "(KÉN-DI)", emoji: "🍬", s1: "I like the blue candy.", t1: "Eu gosto do doce azul.", st1: "(/ai láik dâ blu kén-di/)", s2: "Can I have some candy?", t2: "Podes dar-me um doce?", st2: "(/kén ai hév sâm kén-di/)" },
+                { pt: "BA-LÃO", en: "Balloon", tr: "(BÂ-LÚN)", emoji: "🎈", s1: "Look at the red balloon!", t1: "Olha para o balão vermelho!", st1: "(/luk ét dâ réd bâ-lún/)", s2: "The balloon is in the sky.", t2: "O balão está no céu.", st2: "(/dâ bâ-lún iz in dâ skái/)" },
+                { pt: "BA-LEI-A", en: "Whale", tr: "(UÊIL)", emoji: "🐋", s1: "The whale is in the sea.", t1: "A baleia está no mar.", st1: "(/dâ uêil iz in dâ si/)", s2: "Whales are very big.", t2: "As baleias são muito grandes.", st2: "(/uêils ar vé-ri big/)" },
+                { pt: "BA-TA-TA", en: "Potato", tr: "(PÔ-TÊI-TOU)", emoji: "🥔", s1: "I like mashed potatoes.", t1: "Eu gosto de puré de batata.", st1: "(/ai láik mé-shd pô-têi-tous/)", s2: "The potato is hot.", t2: "A batata está quente.", st2: "(/dâ pô-têi-tou iz hót/)" },
                 { pt: "BAR-CO", en: "Boat", tr: "(BÔUT)", emoji: "⛵", s1: "The boat is on the water.", t1: "O barco está na água.", st1: "(/dâ bôut iz on dâ uó-têr/)", s2: "Let's sail the boat.", t2: "Vamos navegar no barco.", st2: "(/léts sêil dâ bôut/)" },
-                { pt: "BA-CI-A", en: "Bowl", tr: "(BÔUL)", emoji: "🥣", s1: "Put the cereal in the bowl.", t1: "Coloque o cereal na bacia (tigela).", st1: "(/put dâ sí-ri-al in dâ bôul/)", s2: "The blue bowl is clean.", t2: "A bacia azul está limpa.", st2: "(/dâ blu bôul iz klin/)" },
-                { pt: "BA-NHEI-RA", en: "Bathtub", tr: "(BÉT-TÂB)", emoji: "🛁", s1: "Time for the bathtub!", t1: "Hora da banheira!", st1: "(/táim fôr dâ bét-tÂb/)", s2: "Rubber duck in the bathtub.", t2: "Patinho de borracha na banheira.", st2: "(/râ-bêr dâk in dâ bét-tâb/)" },
-                { pt: "BA-TOM", en: "Lipstick", tr: "(LÍP-STIK)", emoji: "💄", s1: "Mom has red lipstick.", t1: "Mamãe tem batom vermelho.", st1: "(/môm hés réd líp-stik/)", s2: "Don't touch the lipstick.", t2: "Não toque no batom.", st2: "(/dount tâtch dâ líp-stik/)" },
-                { pt: "BA-Ú", en: "Chest", tr: "(TCHÉST)", emoji: "🏴‍☠️", s1: "Open the toy chest.", t1: "Abra o baú de brinquedos.", st1: "(/ôu-pên dâ tói tchést/)", s2: "A secret treasure chest.", t2: "Um baú de tesouro secreto.", st2: "(/ê sí-krit tré-jêr tchést/)" },
-                { pt: "BA-TA-TA-FRI-TA", en: "Fries", tr: "(FRÁIZ)", emoji: "🍟", s1: "I love french fries.", t1: "Eu amo batata frita.", st1: "(/ai lâv frêntch fráiz/)", s2: "Can we share the fries?", t2: "Podemos dividir a batata frita?", st2: "(/kén ui shé-r dâ fráiz/)" },
-                { pt: "BAR-RA-CA", en: "Tent", tr: "(TÉNT)", emoji: "⛺", s1: "We sleep in a tent.", t1: "Nós dormimos em uma barraca.", st1: "(/ui slíp in ê tént/)", s2: "The tent is big.", t2: "A barraca é grande.", st2: "(/dâ tént iz big/)" }
+                { pt: "BA-CI-A", en: "Bowl", tr: "(BÔUL)", emoji: "🥣", s1: "Put it in the bowl.", t1: "Coloca-o na bacia.", st1: "(/put it in dâ bôul/)", s2: "A blue cereal bowl.", t2: "Uma bacia azul de cereais.", st2: "(/ê blu sí-ri-al bôul/)" },
+                { pt: "BA-NHEI-RA", en: "Bathtub", tr: "(BÉT-TÂB)", emoji: "🛁", s1: "Time for the bathtub.", t1: "Hora da banheira.", st1: "(/táim fôr dâ bét-tâb/)", s2: "Wash in the bathtub.", t2: "Lava-te na banheira.", st2: "(/uósh in dâ bét-tâb/)" },
+                { pt: "BA-TOM", en: "Lipstick", tr: "(LÍP-STIK)", emoji: "💄", s1: "Mom has red lipstick.", t1: "A mãe tem batom vermelho.", st1: "(/môm hés réd líp-stik/)", s2: "Don't touch the lipstick.", t2: "Não toques no batom.", st2: "(/dount tâtch dâ líp-stik/)" },
+                { pt: "BA-Ú", en: "Chest", tr: "(TCHÉST)", emoji: "🏴‍☠️", s1: "Open the toy chest.", t1: "Abre o baú dos brinquedos.", st1: "(/ôu-pên dâ tói tchést/)", s2: "A treasure chest.", t2: "Um baú do tesouro.", st2: "(/ê tré-jêr tchést/)" },
+                { pt: "BA-TA-TA-FRI-TA", en: "Fries", tr: "(FRÁIZ)", emoji: "🍟", s1: "I love french fries.", t1: "Eu adoro batatas fritas.", st1: "(/ai lâv frêntch fráiz/)", s2: "Crunchy fries are good.", t2: "Batatas fritas crocantes são boas.", st2: "(/krân-tchi fráiz ar gud/)" },
+                { pt: "BAR-RA-CA", en: "Tent", tr: "(TÉNT)", emoji: "⛺", s1: "We sleep in a tent.", t1: "Nós dormimos numa barraca.", st1: "(/ui slíp in ê tént/)", s2: "The tent is big.", t2: "A barraca é grande.", st2: "(/dâ tént iz big/)" }
             ],
             be: [
-                { pt: "BE-BÊ", en: "Baby", tr: "(BÊI-BI)", emoji: "👶", s1: "The baby is crying.", t1: "O bebê está chorando.", st1: "(/dâ bêi-bi iz krái-in/)", s2: "I love my baby brother.", t2: "Eu amo meu irmãozinho bebê.", st2: "(/ai lâv mai bêi-bi brô-dêr/)" },
-                { pt: "BEI-JO", en: "Kiss", tr: "(KÍSS)", emoji: "💋", s1: "Give me a big kiss.", t1: "Me dê um beijão.", st1: "(/guiv mi ê big kíss/)", s2: "A goodnight kiss.", t2: "Um beijo de boa noite.", st2: "(/ê gud-náit kíss/)" },
-                { pt: "BER-ÇO", en: "Crib", tr: "(KRÍB)", emoji: "🛏️", s1: "The baby is in the crib.", t1: "O bebê está no berço.", st1: "(/dâ bêi-bi iz in dâ kríb/)", s2: "A small white crib.", t2: "Um berço branco pequeno.", st2: "(/ê smól uáit kríb/)" },
-                { pt: "BE-SOU-RO", en: "Beetle", tr: "(BÍ-TOL)", emoji: "🪲", s1: "The beetle is green.", t1: "O besouro é verde.", st1: "(/dâ bí-tol iz grin/)", s2: "Look at that little beetle.", t2: "Olhe para aquele besourinho.", st2: "(/luk ét dét lí-tol bí-tol/)" },
-                { pt: "BE-RIN-JE-LA", en: "Eggplant", tr: "(ÉG-PLENT)", emoji: "🍆", s1: "I like eggplant pizza.", t1: "Eu gosto de pizza de berinjela.", st1: "(/ai láik ég-plent pít-sa/)", s2: "The eggplant is purple.", t2: "A berinjela é roxa.", st2: "(/dâ ég-plent iz pûr-pôl/)" },
-                { pt: "BE-ZER-RO", en: "Calf", tr: "(KÉF)", emoji: "🐮", s1: "The calf is with the cow.", t1: "O bezerro está com a vaca.", st1: "(/dâ kéf iz uíd dâ káu/)", s2: "The baby cow is a calf.", t2: "O bebê da vaca é um bezerro.", st2: "(/dâ bêi-bi káu i-zê kéf/)" },
-                { pt: "BE-XI-GA", en: "Balloon", tr: "(BÂ-LÚN)", emoji: "🎈", s1: "The party has balloons.", t1: "A festa tem bexigas.", st1: "(/dâ pár-ti hés bâ-lúns/)", s2: "Pop the yellow balloon!", t2: "Estoure a bexiga amarela!", st2: "(/póp dâ ié-lou bâ-lún/)" },
-                { pt: "BE-BI-DA", en: "Drink", tr: "(DRÍNK)", emoji: "🍹", s1: "Water is a good drink.", t1: "Água é uma boa bebida.", st1: "(/uó-têr i-zê gud drínk/)", s2: "May I have a drink?", t2: "Posso tomar uma bebida?", st2: "(/mêi ai hév ê drínk/)" },
-                { pt: "BE-LIS-CÃO", en: "Pinch", tr: "(PÍNTCH)", emoji: "🤏", s1: "Don't pinch your sister!", t1: "Não dê um beliscão na sua irmã!", st1: "(/dount píntch iór sís-têr/)", s2: "A small pinch on the arm.", t2: "Um pequeno beliscão no braço.", st2: "(/ê smól píntch on dâ árm/)" },
+                { pt: "BE-BÊ", en: "Baby", tr: "(BÊI-BI)", emoji: "👶", s1: "The baby is happy.", t1: "O bebé está feliz.", st1: "(/dâ bêi-bi iz hép-pi/)", s2: "I love the baby.", t2: "Eu amo o bebé.", st2: "(/ai lâv dâ bêi-bi/)" },
+                { pt: "BEI-JO", en: "Kiss", tr: "(KÍSS)", emoji: "💋", s1: "Give me a kiss.", t1: "Dá-me um beijo.", st1: "(/guiv mi ê kíss/)", s2: "A goodnight kiss.", t2: "Um beijo de boa noite.", st2: "(/ê gud-náit kíss/)" },
+                { pt: "BER-ÇO", en: "Crib", tr: "(KRÍB)", emoji: "🛏️", s1: "The baby is in the crib.", t1: "O bebé está no berço.", st1: "(/dâ bêi-bi iz in dâ kríb/)", s2: "A small white crib.", t2: "Um berço branco pequeno.", st2: "(/ê smól uáit kríb/)" },
+                { pt: "BE-SOU-RO", en: "Beetle", tr: "(BÍ-TOL)", emoji: "🪲", s1: "The beetle is green.", t1: "O besouro é verde.", st1: "(/dâ bí-tol iz grin/)", s2: "Look at the beetle.", t2: "Olha para o besouro.", st2: "(/luk ét dâ bí-tol/)" },
+                { pt: "BE-RIN-JE-LA", en: "Eggplant", tr: "(ÉG-PLÉNT)", emoji: "🍆", s1: "Eggplant is purple.", t1: "A beringela é roxa.", st1: "(/ég-plént iz pûr-pôl/)", s2: "I like eggplant.", t2: "Eu gosto de beringela.", st2: "(/ai láik ég-plént/)" },
+                { pt: "BE-ZER-RO", en: "Calf", tr: "(KÉF)", emoji: "🐮", s1: "The calf is small.", t1: "O bezerro é pequeno.", st1: "(/dâ kéf iz smól/)", s2: "A baby cow is a calf.", t2: "Uma vaca bebé é um bezerro.", st2: "(/ê bêi-bi káu iz ê kéf/)" },
+                { pt: "BE-XI-GA", en: "Balloon", tr: "(BÂ-LÚN)", emoji: "🎈", s1: "The party has balloons.", t1: "A festa tem bexigas.", st1: "(/dâ pár-ti hés bâ-lúns/)", s2: "Pop the balloon!", t2: "Rebentar a bexiga!", st2: "(/póp dâ bâ-lún/)" },
+                { pt: "BE-BI-DA", en: "Drink", tr: "(DRÍNK)", emoji: "🍹", s1: "Water is a good drink.", t1: "A água é uma boa bebida.", st1: "(/uó-têr iz ê gud drínk/)", s2: "May I have a drink?", t2: "Posso beber algo?", st2: "(/mêi ai hév ê drínk/)" },
+                { pt: "BE-LIS-CÃO", en: "Pinch", tr: "(PÍNTCH)", emoji: "🤏", s1: "Don't pinch me.", t1: "Não me dês um beliscão.", st1: "(/dount píntch mi/)", s2: "A small pinch.", t2: "Um pequeno beliscão.", st2: "(/ê smól píntch/)" },
                 { pt: "BEI-SE-BOL", en: "Baseball", tr: "(BÊIS-BÓL)", emoji: "⚾", s1: "Let's play baseball.", t1: "Vamos jogar beisebol.", st1: "(/léts plêi bêis-ból/)", s2: "He has a baseball bat.", t2: "Ele tem um taco de beisebol.", st2: "(/hi hés ê bêis-ból bét/)" },
-                { pt: "BE-LE-ZA", en: "Beauty", tr: "(BÍU-TI)", emoji: "👍", s1: "Beauty is everywhere.", t1: "A beleza está em todo lugar.", st1: "(/bíu-ti i-zêv-ri-uér/)", s2: "The flower has beauty.", t2: "A flor tem beleza.", st2: "(/dâ fláu-êr hés bíu-ti/)" },
-                { pt: "BEN-GA-LA", en: "Cane", tr: "(KÊIN)", emoji: "🦯", s1: "Grandpa uses a cane.", t1: "O vovô usa uma bengala.", st1: "(/grénd-pá iú-zê-zê kêin/)", s2: "A candy cane is sweet.", t2: "Uma bengala doce é doce.", st2: "(/ê kén-di kêin iz suít/)" }
+                { pt: "BE-LE-ZA", en: "Beauty", tr: "(BÍU-TI)", emoji: "👍", s1: "Natural beauty.", t1: "Beleza natural.", st1: "(/né-tchur-âl bíu-ti/)", s2: "Look at the beauty.", t2: "Olha para a beleza.", st2: "(/luk ét dâ bíu-ti/)" },
+                { pt: "BEN-GA-LA", en: "Cane", tr: "(KÊIN)", emoji: "🦯", s1: "Grandpa uses a cane.", t1: "O avô usa uma bengala.", st1: "(/grénd-pá iú-ziz ê kêin/)", s2: "A walking cane.", t2: "Uma bengala de caminhar.", st2: "(/ê uó-kin kêin/)" }
             ],
             bi: [
-                { pt: "BI-CI-CLE-TA", en: "Bicycle", tr: "(BÁI-SI-KOL)", emoji: "🚲", s1: "I ride my bicycle.", t1: "Eu ando na minha bicicleta.", st1: "(/ai ráid mai bái-si-kol/)", s2: "A blue bicycle for me.", t2: "Uma bicicleta azul para mim.", st2: "(/ê blu bái-si-kol fôr mi/)" },
-                { pt: "BI-CO", en: "Beak", tr: "(BÍK)", emoji: "🦜", s1: "The bird has a sharp beak.", t1: "O pássaro tem um bico afiado.", st1: "(/dâ bûrd hés ê shár-p bík/)", s2: "A yellow bird beak.", t2: "Um bico de pássaro amarelo.", st2: "(/ê ié-lou bûrd bík/)" },
-                { pt: "BI-GO-DE", en: "Mustache", tr: "(MÂS-TÉSH)", emoji: "🧔", s1: "Daddy has a mustache.", t1: "Papai tem bigode.", st1: "(/dé-di hés ê mâS-tésh/)", s2: "A funny fake mustache.", t2: "Um bigode falso engraçado.", st2: "(/ê fâ-ni fêik mâs-tésh/)" },
-                { pt: "BI-FE", en: "Steak", tr: "(STÊIK)", emoji: "🥩", s1: "I eat steak for lunch.", t1: "Eu como bife no almoço.", st1: "(/ai it stêik fôr lântch/)", s2: "The steak is delicious.", t2: "O bife está delicioso.", st2: "(/dâ stêik iz di-lí-shâs/)" },
-                { pt: "BI-QUÍ-NI", en: "Bikini", tr: "(BI-KÍ-NI)", emoji: "👙", s1: "She wears a pink bikini.", t1: "Ela usa um biquíni rosa.", st1: "(/shi uér-zê pínk bi-kí-ni/)", s2: "Ready for the pool.", t2: "Pronta para a piscina.", st2: "(/ré-di fôr dâ pul/)" },
-                { pt: "BI-CHO", en: "Animal", tr: "(É-NI-MOL)", emoji: "🦁", s1: "What is your favorite animal?", t1: "Qual é o seu bicho (animal) favorito?", st1: "(/uót iz iór fêi-vô-rit é-ni-mol/)", s2: "The lion is a big animal.", t2: "O leão é um bicho grande.", st2: "(/dâ lái-on i-zê big é-ni-mol/)" },
-                { pt: "BI-NÓ-CU-LO", en: "Binoculars", tr: "(BI-NÓ-KIU-LARS)", emoji: "🔭", s1: "I can see the birds.", t1: "Eu consigo ver os pássaros.", st1: "(/ai kén si dâ bûrds/)", s2: "Use the binoculars to see.", t2: "Use o binóculo para ver.", st2: "(/iuz dâ bi-nó-kiu-lars tu si/)" },
-                { pt: "BIS-COI-TO", en: "Cookie", tr: "(KÚ-KI)", emoji: "🍪", s1: "I want a chocolate cookie.", t1: "Eu quero um biscoito de chocolate.", st1: "(/ai uónt ê tchó-kô-lit kú-ki/)", s2: "Milk and cookies, please!", t2: "Leite e biscoitos, por favor!", st2: "(/mílk énd kú-kis pliz/)" },
-                { pt: "BI-LHE-TE", en: "Ticket", tr: "(TÍ-KIT)", emoji: "🎫", s1: "Here is your movie ticket.", t1: "Aqui está o seu bilhete de cinema.", st1: "(/hír iz iór mú-vi tí-kit/)", s2: "Don't lose the ticket.", t2: "Não perca o bilhete.", st2: "(/dount luz dâ tí-kit/)" },
-                { pt: "BIN-GO", en: "Bingo", tr: "(BÍN-GOU)", emoji: "🎱", s1: "Let's play a game of bingo.", t1: "Vamos jogar uma partida de bingo.", st1: "(/léts plêi ê guêim ôv bín-gou/)", s2: "I shouted Bingo!", t2: "Eu gritei Bingo!", st2: "(/ai sháu-têd bín-gou/)" },
-                { pt: "BI-BLI-O-TE-CA", en: "Library", tr: "(LÁI-BRÉ-RI)", emoji: "📚", s1: "We go to the library.", t1: "Nós vamos à biblioteca.", st1: "(/ui gou tu dâ lái-bré-ri/)", s2: "Many books in the library.", t2: "Muitos livros na biblioteca.", st2: "(/mé-ni buks in dâ lái-bré-ri/)" },
-                { pt: "BI-CHO-PRE-GUI-ÇA", en: "Sloth", tr: "(SLÓTH)", emoji: "🦥", s1: "The sloth is very slow.", t1: "O bicho-preguiça é muito lento.", st1: "(/dâ slóth iz vé-ri slóu/)", s2: "Look at the cute sloth.", t2: "Olhe para o bicho-preguiça fofo.", st2: "(/luk ét dâ kiut slóth/)" }
+                { pt: "BI-CI-CLE-TA", en: "Bicycle", tr: "(BÁI-SI-KOL)", emoji: "🚲", s1: "I ride my bicycle.", t1: "Eu ando na minha bicicleta.", st1: "(/ai ráid mai bái-si-kol/)", s2: "A blue bicycle.", t2: "Uma bicicleta azul.", st2: "(/ê blu bái-si-kol/)" },
+                { pt: "BI-CO", en: "Beak", tr: "(BÍK)", emoji: "🦜", s1: "The bird has a beak.", t1: "O pássaro tem um bico.", st1: "(/dâ bûrd hés ê bík/)", s2: "A yellow beak.", t2: "Um bico amarelo.", st2: "(/ê ié-lou bík/)" },
+                { pt: "BI-GO-DE", en: "Mustache", tr: "(MÂS-TÉSH)", emoji: "🧔", s1: "Daddy has a mustache.", t1: "O pai tem bigode.", st1: "(/dé-di hés ê mâs-tésh/)", s2: "A funny mustache.", t2: "Um bigode engraçado.", st2: "(/ê fâ-ni mâs-tésh/)" },
+                { pt: "BI-FE", en: "Steak", tr: "(STÊIK)", emoji: "🥩", s1: "I eat steak.", t1: "Eu como bife.", st1: "(/ai it stêik/)", s2: "The steak is good.", t2: "O bife é bom.", st2: "(/dâ stêik iz gud/)" },
+                { pt: "BI-QUÍ-NI", en: "Bikini", tr: "(BI-KÍ-NI)", emoji: "👙", s1: "She wears a bikini.", t1: "Ela usa um biquíni.", st1: "(/shi uêrs ê bi-kí-ni/)", s2: "Pink bikini.", t2: "Biquíni rosa.", st2: "(/pínk bi-kí-ni/)" },
+                { pt: "BI-CHO", en: "Animal", tr: "(É-NI-MOL)", emoji: "🦁", s1: "What a big animal!", t1: "Que bicho grande!", st1: "(/uót ê big é-ni-mol/)", s2: "My favorite animal.", t2: "O meu bicho favorito.", st2: "(/mai fêi-vô-rit é-ni-mol/)" },
+                { pt: "BI-NÓ-CU-LO", en: "Binoculars", tr: "(BI-NÓ-KIU-LARS)", emoji: "🔭", s1: "Use the binoculars.", t1: "Usa o binóculo.", st1: "(/iuz dâ bi-nó-kiu-lars/)", s2: "I see with binoculars.", t2: "Eu vejo com o binóculo.", st2: "(/ai si uíd bi-nó-kiu-lars/)" },
+                { pt: "BIS-COI-TO", en: "Cookie", tr: "(KÚ-KI)", emoji: "🍪", s1: "I want a cookie.", t1: "Eu quero um biscoito.", st1: "(/ai uónt ê kú-ki/)", s2: "Chocolate cookie.", t2: "Biscoito de chocolate.", st2: "(/tchó-kô-lit kú-ki/)" },
+                { pt: "BI-LHE-TE", en: "Ticket", tr: "(TÍ-KIT)", emoji: "🎫", s1: "Here is your ticket.", t1: "Aqui está o teu bilhete.", st1: "(/hír iz iór tí-kit/)", s2: "Don't lose the ticket.", t2: "Não percas o bilhete.", st2: "(/dount luz dâ tí-kit/)" },
+                { pt: "BIN-GO", en: "Bingo", tr: "(BÍN-GOU)", emoji: "🎱", s1: "Let's play bingo.", t1: "Vamos jogar bingo.", st1: "(/léts plêi bín-gou/)", s2: "I won the bingo!", t2: "Eu ganhei o bingo!", st2: "(/ai uón dâ bín-gou/)" },
+                { pt: "BI-BLI-O-TE-CA", en: "Library", tr: "(LÁI-BRÉ-RI)", emoji: "📚", s1: "We go to the library.", t1: "Nós vamos à biblioteca.", st1: "(/ui gou tu dâ lái-bré-ri/)", s2: "Books in the library.", t2: "Livros na biblioteca.", st2: "(/buks in dâ lái-bré-ri/)" },
+                { pt: "BI-CHO-PRE-GUI-ÇA", en: "Sloth", tr: "(SLÓTH)", emoji: "🦥", s1: "The sloth is slow.", t1: "O bicho-preguiça é lento.", st1: "(/dâ slóth iz slóu/)", s2: "Look at the sloth.", t2: "Olha para o bicho-preguiça.", st2: "(/luk ét dâ slóth/)" }
             ],
             bo: [
-                { pt: "BO-LA", en: "Ball", tr: "(BÓL)", emoji: "⚽", s1: "Throw the ball to me.", t1: "Jogue a bola para mim.", st1: "(/trôu dâ ból tu mi/)", s2: "The ball is round.", t2: "A bola é redonda.", st2: "(/dâ ból iz ráund/)" },
-                { pt: "BO-LO", en: "Cake", tr: "(KÊIK)", emoji: "🍰", s1: "Happy birthday cake!", t1: "Bolo de feliz aniversário!", st1: "(/hép-pi bûrd-dêi kêik/)", s2: "A piece of chocolate cake.", t2: "Um pedaço de bolo de chocolate.", st2: "(/ê pís ôv tchó-kô-lit kêik/)" },
-                { pt: "BO-NE-CA", en: "Doll", tr: "(DÓL)", emoji: "👧", s1: "The doll has long hair.", t1: "A boneca tem cabelo comprido.", st1: "(/dâ dól hés lóng hér/)", s2: "Play with your dolls.", t2: "Brinque com suas bonecas.", st2: "(/plêi uíd iór dóls/)" },
-                { pt: "BO-CA", en: "Mouth", tr: "(MÁUTH)", emoji: "👄", s1: "Open your mouth.", t1: "Abra a sua boca.", st1: "(/ôu-pên iór máuth/)", s2: "Brush your teeth.", t2: "Escove os seus dentes.", st2: "(/brâsh iór tith/)" },
-                { pt: "BOI", en: "Ox", tr: "(ÓKS)", emoji: "🐂", s1: "The ox is in the field.", t1: "O boi está no campo.", st1: "(/dâ óks iz in dâ fild/)", s2: "A very strong ox.", t2: "Um boi muito forte.", st2: "(/ê vé-ri stróng óks/)" },
-                { pt: "BO-TA", en: "Boot", tr: "(BÚT)", emoji: "👢", s1: "Put on your boots.", t1: "Calce as suas botas.", st1: "(/put on iór búts/)", s2: "Rain boots are yellow.", t2: "Botas de chuva são amarelas.", st2: "(/rêin búts ar ié-lou/)" },
-                { pt: "BO-NÉ", en: "Cap", tr: "(KÉP)", emoji: "🧢", s1: "I wear a blue cap.", t1: "Eu uso um boné azul.", st1: "(/ai uêr ê blu kép/)", s2: "Turn your cap around.", t2: "Vire o seu boné para trás.", st2: "(/tûrn iór kép ê-ráund/)" },
-                { pt: "BO-TÃO", en: "Button", tr: "(BÂ-TON)", emoji: "🔘", s1: "Push the red button.", t1: "Aperte o botão vermelho.", st1: "(/púsh dâ réd bâ-ton/)", s2: "My shirt has buttons.", t2: "Minha camisa tem botões.", st2: "(/mai shûrt hés bâ-tons/)" },
-                { pt: "BOR-BO-LE-TA", en: "Butterfly", tr: "(BÂ-TÊR-FLÁI)", emoji: "🦋", s1: "The butterfly is pretty.", t1: "A borboleta é bonita.", st1: "(/dâ bâ-têr-flái iz prí-ti/)", s2: "See the butterfly fly.", t2: "Veja a borboleta voar.", st2: "(/si dâ bâ-têr-flái flái/)" },
-                { pt: "BO-DE", en: "Goat", tr: "(GÔUT)", emoji: "🐐", s1: "The goat eats grass.", t1: "O bode come grama.", st1: "(/dâ gôut its gréss/)", s2: "A little baby goat.", t2: "Um bodinho bebê.", st2: "(/ê lí-tol bêi-bi gôut/)" },
-                { pt: "BOL-SO", en: "Pocket", tr: "(PÓ-KIT)", emoji: "👖", s1: "My hands are in my pockets.", t1: "Minhas mãos estão nos meus bolsos.", st1: "(/mai hénds ar in mai pó-kits/)", s2: "A hole in the pocket.", t2: "Um buraco no bolso.", st2: "(/ê hôul in dâ pó-kit/)" },
-                { pt: "BO-LA-CHA", en: "Cracker", tr: "(KRÉ-KÊR)", emoji: "🥠", s1: "I want a salty cracker.", t1: "Eu quero uma bolacha salgada.", st1: "(/ai uónt ê sól-ti kré-kêr/)", s2: "Cheese and crackers.", t2: "Queijo e bolachas.", st2: "(/tchiz énd kré-kêrs/)" }
+                { pt: "BO-LA", en: "Ball", tr: "(BÓL)", emoji: "⚽", s1: "Throw the ball.", t1: "Atira a bola.", st1: "(/thrôu dâ ból/)", s2: "The ball is round.", t2: "A bola é redonda.", st2: "(/dâ ból iz ráund/)" },
+                { pt: "BO-LO", en: "Cake", tr: "(KÊIK)", emoji: "🍰", s1: "I like cake.", t1: "Eu gosto de bolo.", st1: "(/ai láik kêik/)", s2: "Birthday cake.", t2: "Bolo de aniversário.", st2: "(/bûrd-dêi kêik/)" },
+                { pt: "BO-NE-CA", en: "Doll", tr: "(DÓL)", emoji: "👧", s1: "The doll is pretty.", t1: "A boneca é bonita.", st1: "(/dâ dól iz prí-ti/)", s2: "Play with the doll.", t2: "Brinca com a boneca.", st2: "(/plêi uíd dâ dól/)" },
+                { pt: "BO-CA", en: "Mouth", tr: "(MÁUTH)", emoji: "👄", s1: "Open your mouth.", t1: "Abre a boca.", st1: "(/ôu-pên iór máuth/)", s2: "Brush your teeth.", t2: "Escova os dentes.", st2: "(/brâsh iór tith/)" },
+                { pt: "BOI", en: "Ox", tr: "(ÓKS)", emoji: "🐂", s1: "The ox is big.", t1: "O boi é grande.", st1: "(/dâ óks iz big/)", s2: "Strong ox.", t2: "Boi forte.", st2: "(/stróng óks/)" },
+                { pt: "BO-TA", en: "Boot", tr: "(BÚT)", emoji: "👢", s1: "Put on your boots.", t1: "Calça as tuas botas.", st1: "(/put on iór búts/)", s2: "Rain boots.", t2: "Botas de chuva.", st2: "(/rêin búts/)" },
+                { pt: "BO-NÉ", en: "Cap", tr: "(KÉP)", emoji: "🧢", s1: "I wear a cap.", t1: "Eu uso um boné.", st1: "(/ai uêr ê kép/)", s2: "Blue cap.", t2: "Boné azul.", st2: "(/blu kép/)" },
+                { pt: "BO-TÃO", en: "Button", tr: "(BÂ-TON)", emoji: "🔘", s1: "Push the button.", t1: "Carrega no botão.", st1: "(/púsh dâ bâ-ton/)", s2: "Red button.", t2: "Botão vermelho.", st2: "(/réd bâ-ton/)" },
+                { pt: "BOR-BO-LE-TA", en: "Butterfly", tr: "(BÂ-TÊR-FLÁI)", emoji: "🦋", s1: "The butterfly flies.", t1: "A borboleta voa.", st1: "(/dâ bâ-têr-flái fláiz/)", s2: "Pretty butterfly.", t2: "Borboleta bonita.", st2: "(/prí-ti bâ-têr-flái/)" },
+                { pt: "BO-DE", en: "Goat", tr: "(GÔUT)", emoji: "🐐", s1: "The goat eats grass.", t1: "O bode come erva.", st1: "(/dâ gôut its gréss/)", s2: "Little goat.", t2: "Bode pequeno.", st2: "(/lí-tol gôut/)" },
+                { pt: "BOL-SO", en: "Pocket", tr: "(PÓ-KIT)", emoji: "👖", s1: "Hands in the pocket.", t1: "Mãos no bolso.", st1: "(/hénds in dâ pó-kit/)", s2: "Empty pocket.", t2: "Bolso vazio.", st2: "(/ém-ti pó-kit/)" },
+                { pt: "BO-LA-CHA", en: "Cracker", tr: "(KRÉ-KÊR)", emoji: "🥠", s1: "I want a cracker.", t1: "Eu quero uma bolacha.", st1: "(/ai uónt ê kré-kêr/)", s2: "Salty cracker.", t2: "Bolacha salgada.", st2: "(/sól-ti kré-kêr/)" }
             ],
             bu: [
-                { pt: "BU-LE", en: "Teapot", tr: "(TÍ-PÓT)", emoji: "🫖", s1: "The teapot is hot.", t1: "O bule está quente.", st1: "(/dâ tí-pót iz hót/)", s2: "Pour the tea, please.", t2: "Sirva o chá, por favor.", st2: "(/pôr dâ ti pliz/)" },
-                { pt: "BU-RA-CO", en: "Hole", tr: "(HÔUL)", emoji: "🕳️", s1: "A hole in the ground.", t1: "Um buraco no chão.", st1: "(/ê hôul in dâ gráund/)", s2: "Dig a big hole.", t2: "Cave um buraco grande.", st2: "(/dig ê big hôul/)" },
-                { pt: "BU-ZI-NA", en: "Horn", tr: "(HÓRN)", emoji: "📣", s1: "Honk the car horn.", t1: "Aperte a buzina do carro.", st1: "(/hônk dâ kár hórn/)", s2: "Beep beep goes the horn.", t2: "Bi-bi faz a buzina.", st2: "(/bip bip gôuz dâ hórn/)" },
-                { pt: "BU-CHA", en: "Sponge", tr: "(SPÂNDJ)", emoji: "🧽", s1: "Use the sponge to clean.", t1: "Use a bucha (esponja) para limpar.", st1: "(/iuz dâ spândj tu klin/)", s2: "A soft yellow sponge.", t2: "Uma bucha amarela macia.", st2: "(/ê sóft ié-lou spândj/)" },
-                { pt: "BU-RRO", en: "Donkey", tr: "(DÓN-KI)", emoji: "🫏", s1: "The donkey is friendly.", t1: "O burro é amigável.", st1: "(/dâ dón-ki iz frénd-li/)", s2: "Hee-haw says the donkey.", t2: "I-ó diz o burro.", st2: "(/hi-hó sêiz dâ dón-ki/)" },
-                { pt: "BU-QUÊ", en: "Bouquet", tr: "(BU-KÊI)", emoji: "💐", s1: "A bouquet of flowers.", t1: "Um buquê de flores.", st1: "(/ê bu-kêi ôv fláu-êrs/)", s2: "For my beautiful mom.", t2: "Para a minha mamãe linda.", st2: "(/fôr mai biu-ti-ful môm/)" },
-                { pt: "BU-ME-RAN-GUE", en: "Boomerang", tr: "(BU-MÊ-RÉNG)", emoji: "🪃", s1: "Throw the boomerang.", t1: "Jogue o bumerangue.", st1: "(/trôu dâ bu-mê-réng/)", s2: "It comes back to you.", t2: "Ele volta para você.", st2: "(/it kâms bék tu iu/)" },
-                { pt: "BÚ-FA-LO", en: "Buffalo", tr: "(BÂ-FÂ-LOU)", emoji: "🐃", s1: "The buffalo is strong.", t1: "O búfalo é forte.", st1: "(/dâ bâ-fâ-lou iz stróng/)", s2: "A big brown buffalo.", t2: "Um grande búfalo marrom.", st2: "(/ê big bráun bâ-fâ-lou/)" },
-                { pt: "BUL-DO-GUE", en: "Bulldog", tr: "(BUL-DÓG)", emoji: "🐶", s1: "The bulldog is sleeping.", t1: "O buldogue está dormindo.", st1: "(/dâ bul-dóg iz slí-pin/)", s2: "A funny bulldog face.", t2: "Uma cara de buldogue engraçada.", st2: "(/ê fâ-ni bul-dóg fêis/)" },
-                { pt: "BÚ-SSO-LA", en: "Compass", tr: "(KÓM-PÂSS)", emoji: "🧭", s1: "Use the compass to find north.", t1: "Use a bússola para achar o norte.", st1: "(/iuz dâ kóm-pâss tu fáind nôrth/)", s2: "A shiny gold compass.", t2: "Uma bússola dourada brilhante.", st2: "(/ê shái-ni gôuld kóm-pâss/)" },
-                { pt: "BUS-CA", en: "Search", tr: "(SÛRTCH)", emoji: "🔍", s1: "Search for the hidden key.", t1: "Busca (procure) pela chave escondida.", st1: "(/sûrtch fôr dâ hí-dên ki/)", s2: "I will search online.", t2: "Eu vou fazer uma busca online.", st2: "(/ai uíl sûrtch on-láin/)" },
-                { pt: "BUM-BUM", en: "Bottom", tr: "(BÓ-TOM)", emoji: "🍑", s1: "Wash your bottom.", t1: "Lave o seu bumbum.", st1: "(/uósh iór bó-tom/)", s2: "Sit on your bottom.", t2: "Sente-se no seu bumbum.", st2: "(/sít on iór bó-tom/)" }
+                { pt: "BU-LE", en: "Teapot", tr: "(TÍ-PÓT)", emoji: "🫖", s1: "The teapot is hot.", t1: "O bule está quente.", st1: "(/dâ tí-pót iz hót/)", s2: "Tea in the teapot.", t2: "Chá no bule.", st2: "(/ti in dâ tí-pót/)" },
+                { pt: "BU-RA-CO", en: "Hole", tr: "(HÔUL)", emoji: "🕳️", s1: "A hole in the ground.", t1: "Um buraco no chão.", st1: "(/ê hôul in dâ gráund/)", s2: "Big hole.", t2: "Buraco grande.", st2: "(/big hôul/)" },
+                { pt: "BU-ZI-NA", en: "Horn", tr: "(HÓRN)", emoji: "📣", s1: "Honk the horn.", t1: "Toca a buzina.", st1: "(/hônk dâ hórn/)", s2: "Car horn.", t2: "Buzina de carro.", st2: "(/kár hórn/)" },
+                { pt: "BU-CHA", en: "Sponge", tr: "(SPÂNDJ)", emoji: "🧽", s1: "Use the sponge.", t1: "Usa a bucha.", st1: "(/iuz dâ spândj/)", s2: "Soft sponge.", t2: "Bucha macia.", st2: "(/sóft spândj/)" },
+                { pt: "BU-RRO", en: "Donkey", tr: "(DÓN-KI)", emoji: "🫏", s1: "The donkey is grey.", t1: "O burro é cinzento.", st1: "(/dâ dón-ki iz grêi/)", s2: "Friendly donkey.", t2: "Burro amigável.", st2: "(/frénd-li dón-ki/)" },
+                { pt: "BU-QUÊ", en: "Bouquet", tr: "(BU-KÊI)", emoji: "💐", s1: "Bouquet of flowers.", t1: "Buquê de flores.", st1: "(/bu-kêi ôv fláu-êrs/)", s2: "For you.", t2: "Para ti.", st2: "(/fôr iu/)" },
+                { pt: "BU-ME-RAN-GUE", en: "Boomerang", tr: "(BU-MÊ-RÉNG)", emoji: "🪃", s1: "Throw the boomerang.", t1: "Atira o bumerangue.", st1: "(/thrôu dâ bu-mê-réng/)", s2: "It comes back.", t2: "Ele volta.", st2: "(/it kâms bék/)" },
+                { pt: "BÚ-FA-LO", en: "Buffalo", tr: "(BÂ-FÂ-LOU)", emoji: "🐃", s1: "The buffalo is strong.", t1: "O búfalo é forte.", st1: "(/dâ bâ-fâ-lou iz stróng/)", s2: "Big buffalo.", t2: "Búfalo grande.", st2: "(/big bâ-fâ-lou/)" },
+                { pt: "BUL-DO-GUE", en: "Bulldog", tr: "(BUL-DÓG)", emoji: "🐶", s1: "Funny bulldog.", t1: "Buldogue engraçado.", st1: "(/fâ-ni bul-dóg/)", s2: "The dog is a bulldog.", t2: "O cão é um buldogue.", st2: "(/dâ dóg iz ê bul-dóg/)" },
+                { pt: "BÚ-SSO-LA", en: "Compass", tr: "(KÓM-PÂSS)", emoji: "🧭", s1: "Use the compass.", t1: "Usa a bússola.", st1: "(/iuz dâ kóm-pâss/)", s2: "Find the way.", t2: "Encontra o caminho.", st2: "(/fáind dâ uêi/)" },
+                { pt: "BUS-CA", en: "Search", tr: "(SÛRTCH)", emoji: "🔍", s1: "Search for it.", t1: "Busca por isso.", st1: "(/sûrtch fôr it/)", s2: "Online search.", t2: "Busca online.", st2: "(/on-láin sûrtch/)" },
+                { pt: "BUM-BUM", en: "Bottom", tr: "(BÓ-TOM)", emoji: "🍑", s1: "Sit on your bottom.", t1: "Senta-te no bumbum.", st1: "(/sít on iór bó-tom/)", s2: "Wash your bottom.", t2: "Lava o bumbum.", st2: "(/uósh iór bó-tom/)" }
             ],
             bao: [
-                { pt: "SA-BÃO", en: "Soap", tr: "(SÔUP)", emoji: "🧼", s1: "Wash hands with soap.", t1: "Lave as mãos com sabão.", st1: "(/uósh hénds uíd sôup/)", s2: "The soap has bubbles.", t2: "O sabão tem bolhas.", st2: "(/dâ sôup hés bâ-bôls/)" },
-                { pt: "LO-BÃO", en: "Big Wolf", tr: "(BÍG UÚLF)", emoji: "🐺", s1: "The big wolf is scary.", t1: "O lobão é assustador.", st1: "(/dâ big uúlf iz ské-ri/)", s2: "Hooooowl says the wolf.", t2: "Auuuuu diz o lobão.", st2: "(/hâu-ol sêiz dâ uúlf/)" },
-                { pt: "BO-BÃO", en: "Silly", tr: "(SÍ-LI)", emoji: "🤪", s1: "Don't be silly!", t1: "Não seja bobão!", st1: "(/dount bi sí-li/)", s2: "You are a silly boy.", t2: "Você é um menino bobão.", st2: "(/iu ar ê sí-li bói/)" },
-                { pt: "BA-BÃO", en: "Drooler", tr: "(DRU-LÊR)", emoji: "🤤", s1: "The baby is a drooler.", t1: "O bebê é um babão.", st1: "(/dâ bêi-bi i-zê dru-lêr/)", s2: "Wipe your chin.", t2: "Limpe o queixo (seu babão).", st2: "(/uáip iór tchín/)" },
-                { pt: "GI-BÃO", en: "Jacket", tr: "(DJÉ-KIT)", emoji: "🧥", s1: "Wear your leather jacket.", t1: "Use seu gibão (jaqueta de couro).", st1: "(/uêr iór lé-dêr djé-kit/)", s2: "The jacket is warm.", t2: "A jaqueta está quentinha.", st2: "(/dâ djé-kit iz uórm/)" }
+                { pt: "SA-BÃO", en: "Soap", tr: "(SÔUP)", emoji: "🧼", s1: "Wash with soap.", t1: "Lava com sabão.", st1: "(/uósh uíd sôup/)", s2: "Soap bubbles.", t2: "Bolhas de sabão.", st2: "(/sôup bâ-bôls/)" },
+                { pt: "LO-BÃO", en: "Big Wolf", tr: "(BÍG UÚLF)", emoji: "🐺", s1: "The big wolf is here.", t1: "O lobão está aqui.", st1: "(/dâ big uúlf iz hír/)", s2: "Scary wolf.", t2: "Lobão assustador.", st2: "(/ské-ri uúlf/)" },
+                { pt: "BO-BÃO", en: "Silly", tr: "(SÍ-LI)", emoji: "🤪", s1: "Don't be silly.", t1: "Não sejas bobão.", st1: "(/dount bi sí-li/)", s2: "A silly boy.", t2: "Um rapaz bobão.", st2: "(/ê sí-li bói/)" },
+                { pt: "BA-BÃO", en: "Drooler", tr: "(DRU-LÊR)", emoji: "🤤", s1: "The baby is a drooler.", t1: "O bebé é um babão.", st1: "(/dâ bêi-bi iz ê dru-lêr/)", s2: "Wipe your face.", t2: "Limpa a cara.", st2: "(/uáip iór fêis/)" },
+                { pt: "GI-BÃO", en: "Jacket", tr: "(DJÉ-KIT)", emoji: "🧥", s1: "Wear your jacket.", t1: "Veste o teu gibão.", st1: "(/uêr iór djé-kit/)", s2: "Leather jacket.", t2: "Gibão de couro.", st2: "(/lé-dêr djé-kit/)" }
             ]
         };
 
@@ -173,14 +172,16 @@
                     const card = `
                         <div class="card-word p-4 flex flex-col items-center gap-4">
                             <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center text-4xl shadow-inner">${item.emoji}</div>
-                            <div class="w-full text-center">
-                                <div class="flex gap-1 mb-3 justify-center flex-wrap">${sylButtons}</div>
-                                <div class="flex items-center gap-2 mb-3 justify-center">
-                                    <span class="text-xl font-bold text-blue-600 uppercase">${item.en}</span>
-                                    <span class="transcription">${item.tr}</span>
-                                    <button onclick="speakEN('${item.en}')" class="btn-audio">🔊</button>
+                            <div class="w-full text-center flex-1 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex gap-1 mb-3 justify-center flex-wrap">${sylButtons}</div>
+                                    <div class="flex items-center gap-2 mb-3 justify-center">
+                                        <span class="text-xl font-bold text-blue-600 uppercase">${item.en}</span>
+                                        <span class="transcription">${item.tr}</span>
+                                        <button onclick="speakEN('${item.en}')" class="btn-audio">🔊</button>
+                                    </div>
                                 </div>
-                                <div class="bg-gray-50 p-3 rounded-xl border-l-4 border-blue-300 text-left space-y-2">
+                                <div class="bg-gray-50 p-3 rounded-xl border-l-4 border-blue-300 text-left space-y-2 mt-auto">
                                     <div class="mb-2">
                                         <span class="text-[11px] font-bold block">1. ${item.s1}</span>
                                         <span class="translation-text">${item.t1}</span>
@@ -205,10 +206,6 @@
             }
         }
 
-        /**
-         * FUNÇÃO DE ÁUDIO PT-BR
-         * Pronuncia a sílaba completa.
-         */
         function speakPT(text) {
             if ('speechSynthesis' in window) {
                 window.speechSynthesis.cancel();
@@ -220,18 +217,23 @@
             }
         }
 
-        /**
-         * FUNÇÃO DE ÁUDIO EN-US
-         */
         function speakEN(text) {
             if ('speechSynthesis' in window) {
                 window.speechSynthesis.cancel();
                 const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'en-US';
-                utterance.rate = 0.9;
                 const voices = window.speechSynthesis.getVoices();
-                const enVoice = voices.find(v => v.lang.startsWith('en-') && v.name.includes('Google'));
-                if (enVoice) utterance.voice = enVoice;
+                let selectedVoice = voices.find(v => v.lang === 'en-US' && (v.name.includes('Google') || v.name.includes('Natural'))) ||
+                                    voices.find(v => v.lang === 'en-US' && v.name.includes('Siri')) ||
+                                    voices.find(v => v.lang.startsWith('en-US')) ||
+                                    voices.find(v => v.lang.startsWith('en'));
+
+                if (selectedVoice) {
+                    utterance.voice = selectedVoice;
+                    utterance.lang = selectedVoice.lang;
+                } else {
+                    utterance.lang = 'en-US';
+                }
+                utterance.rate = 0.85;
                 window.speechSynthesis.speak(utterance);
             }
         }
