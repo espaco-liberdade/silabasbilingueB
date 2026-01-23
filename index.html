@@ -39,6 +39,7 @@
             transition: all 0.2s;
             user-select: none;
             min-width: 50px;
+            -webkit-tap-highlight-color: transparent; /* Remove flash cinza no iOS */
         }
         .syllable-game-btn:hover { background: #e9d5ff; transform: scale(1.05); }
         .syllable-game-btn:active { transform: scale(0.95); }
@@ -74,6 +75,7 @@
         .emoji-btn {
             cursor: pointer;
             transition: transform 0.2s;
+            -webkit-tap-highlight-color: transparent;
         }
         .emoji-btn.completed {
             animation: pulse-green 1s infinite;
@@ -89,6 +91,7 @@
             background: #e0f2fe; color: #0284c7; width: 32px; height: 32px; border-radius: 50%; 
             display: inline-flex; align-items: center; justify-content: center; cursor: pointer; 
             border: 1px solid #bae6fd; transition: background 0.2s; flex-shrink: 0;
+            -webkit-tap-highlight-color: transparent;
         }
         .btn-audio:hover { background: #0ea5e9; color: white; }
         
@@ -215,11 +218,24 @@
     </div>
 
     <script>
-        // --- CONFIGURAÇÃO DE ÁUDIO (SONS DE JOGO) ---
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        // --- CONFIGURAÇÃO DE ÁUDIO (SONS DE JOGO) PARA MOBILE/IOS ---
+        // Criação preguiçosa do contexto de áudio
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
 
         function playSound(type) {
-            if (audioCtx.state === 'suspended') audioCtx.resume();
+            initAudio(); // Tenta iniciar/retomar o áudio no clique
+            
+            if (!audioCtx) return;
+
             const oscillator = audioCtx.createOscillator();
             const gainNode = audioCtx.createGain();
             oscillator.connect(gainNode);
@@ -232,7 +248,7 @@
                 oscillator.type = 'sine';
                 oscillator.frequency.setValueAtTime(880, now); // Nota Lá
                 oscillator.frequency.exponentialRampToValueAtTime(1760, now + 0.1);
-                gainNode.gain.setValueAtTime(0.1, now);
+                gainNode.gain.setValueAtTime(0.3, now); // Volume um pouco mais alto para mobile
                 gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
                 oscillator.start(now);
                 oscillator.stop(now + 0.5);
@@ -241,7 +257,7 @@
                 oscillator.type = 'sawtooth';
                 oscillator.frequency.setValueAtTime(150, now);
                 oscillator.frequency.linearRampToValueAtTime(100, now + 0.2);
-                gainNode.gain.setValueAtTime(0.1, now);
+                gainNode.gain.setValueAtTime(0.3, now);
                 gainNode.gain.linearRampToValueAtTime(0.001, now + 0.3);
                 oscillator.start(now);
                 oscillator.stop(now + 0.3);
@@ -254,7 +270,7 @@
                     gn.connect(audioCtx.destination);
                     osc.type = 'triangle';
                     osc.frequency.value = freq;
-                    gn.gain.setValueAtTime(0.1, now + (i * 0.1));
+                    gn.gain.setValueAtTime(0.2, now + (i * 0.1));
                     gn.gain.linearRampToValueAtTime(0.001, now + 0.8 + (i * 0.1));
                     osc.start(now + (i * 0.1));
                     osc.stop(now + 1.2);
@@ -265,7 +281,7 @@
         // --- DADOS ---
         const data = {
             ba: [
-                { pt: "BA-NA-NA", en: "Banana", tr: "(BÂ-NÉ-NÂ)", emoji: "🍌", s1: "I eat a yellow banana.", t1: "Eu como uma banana amarela.", st1: "(/ai liv in ê big háuss/)", s2: "Monkeys love bananas.", t2: "Os macacos adoram bananas.", st2: "(/mai háuss iz blu/)" },
+                { pt: "BA-NA-NA", en: "Banana", tr: "(BÂ-NÉ-NÂ)", emoji: "🍌", s1: "I eat a yellow banana.", t1: "Eu como uma banana amarela.", st1: "(/ai it ê ié-lou bâ-né-nâ/)", s2: "Monkeys love bananas.", t2: "Os macacos adoram bananas.", st2: "(/mân-kis lâv bâ-né-nâs/)" },
                 { pt: "BA-LA", en: "Candy", tr: "(KÉN-DI)", emoji: "🍬", s1: "I like the blue candy.", t1: "Eu gosto da bala azul.", st1: "(/ai láik dâ blu kén-di/)", s2: "Can I have some candy?", t2: "Podes dar-me um doce?", st2: "(/kén ai hév sâm kén-di/)" },
                 { pt: "BA-LÃO", en: "Balloon", tr: "(BÂ-LÚN)", emoji: "🎈", s1: "Look at the red balloon!", t1: "Olha para o balão vermelho!", st1: "(/luk ét dâ réd bâ-lún/)", s2: "The balloon is in the sky.", t2: "O balão está no céu.", st2: "(/dâ bâ-lún iz in dâ skái/)" },
                 { pt: "BA-LEI-A", en: "Whale", tr: "(UÊIL)", emoji: "🐋", s1: "The whale is in the sea.", t1: "A baleia está no mar.", st1: "(/dâ uêil iz in dâ si/)", s2: "Whales are very big.", t2: "As baleias são muito grandes.", st2: "(/uêils ar vé-ri big/)" },
@@ -499,8 +515,12 @@
                 const utterance = new SpeechSynthesisUtterance(text);
                 
                 if (voices.length === 0) loadVoices();
+                
+                // Estratégia de Voz Otimizada para iOS/Android/PC
                 const targetVoice = 
-                    voices.find(v => v.lang === 'en-US' && v.name.includes('Google')) || 
+                    voices.find(v => v.lang === 'en-US' && v.name.includes('Samantha')) || // Melhor voz feminina no iPhone (iOS/macOS)
+                    voices.find(v => v.lang === 'en-US' && v.name.includes('Ava')) || // Outra boa opção Apple
+                    voices.find(v => v.lang === 'en-US' && v.name.includes('Google US English')) || // Melhor voz no Android/Chrome
                     voices.find(v => v.lang === 'en-US' && (v.name.includes('Premium') || v.name.includes('Enhanced'))) ||
                     voices.find(v => v.lang === 'en-US') ||
                     voices.find(v => v.lang.startsWith('en'));
@@ -519,9 +539,7 @@
             
             // Ativa o contexto de áudio na primeira interação do usuário para navegadores que bloqueiam autoplay
             document.body.addEventListener('click', function() {
-                if (audioCtx.state === 'suspended') {
-                    audioCtx.resume();
-                }
+                initAudio();
             }, { once: true });
         };
     </script>
